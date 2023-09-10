@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="周燃">
+
+
+
+
+
+<title>果园自走式环形开沟机的研制-项目展示 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">周燃的个人主页</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">周燃的个人主页</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">果园自走式环形开沟机的研制-项目展示</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">周燃</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 10, 2023&nbsp;&nbsp;21:45:05</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="项目名称：果园自走式环形开沟机的研制"><a href="#项目名称：果园自走式环形开沟机的研制" class="headerlink" title="项目名称：果园自走式环形开沟机的研制"></a><strong>项目名称</strong>：<strong>果园自走式环形开沟机的研制</strong></h2><h2 id="项目时间：2022-10-2024-05"><a href="#项目时间：2022-10-2024-05" class="headerlink" title="项目时间：2022.10-2024.05"></a><strong>项目时间</strong>：2022.10-2024.05</h2><h2 id="项目角色：负责人"><a href="#项目角色：负责人" class="headerlink" title="项目角色：负责人"></a><strong>项目角色</strong>：负责人</h2><h2 id="项目概况："><a href="#项目概况：" class="headerlink" title="项目概况："></a><strong>项目概况</strong>：</h2><p>设计一种果园自走式环形开沟机，适用于低矮狭长地形果园的开沟施肥作业，通过机械结构实现整机自动沿果树树冠滴水线绕树干开环形沟，并可通过挡位变换实现开直沟、反向空车直行以及通过扶手灵活转向。</p>
+<h2 id="主要内容："><a href="#主要内容：" class="headerlink" title="主要内容："></a><strong>主要内容</strong>：</h2><p>基于Creo对整机结构方案进行三维建模，进行关键零部件的结构设计。主要涉及：</p>
+<p>（1）齿轮变速箱、齿轮减速器、牙嵌式离合器、开沟刀总成等关键部件的结构设计；</p>
+<p>（2）链轮链条传动系统、带传动系统的设计；</p>
+<p>（3）花键轴、齿轮轴、阶梯轴、轴承端盖、轴承透盖、异形轴套、齿轮箱体、离合器等零件图纸的绘制与外发加工；</p>
+<p>（4）部件装配与整机总装。</p>
+<h2 id="研究过程："><a href="#研究过程：" class="headerlink" title="研究过程："></a><strong>研究过程</strong>：</h2><h3 id="（1）环形开沟技术要求示意图"><a href="#（1）环形开沟技术要求示意图" class="headerlink" title="（1）环形开沟技术要求示意图"></a><strong>（1）环形开沟技术要求示意图</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E7%8E%AF%E5%BD%A2%E6%B2%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.jpg" class="" title="环形沟技术要求">
+
+<h3 id="（2）系统传动方案"><a href="#（2）系统传动方案" class="headerlink" title="（2）系统传动方案"></a><strong>（2）系统传动方案</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E4%BC%A0%E5%8A%A8%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88.jpg" class="" title="传动系统方案">
+
+<h3 id="（3）整机结构方案三维图"><a href="#（3）整机结构方案三维图" class="headerlink" title="（3）整机结构方案三维图"></a><strong>（3）整机结构方案三维图</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E6%95%B4%E6%9C%BA%E6%96%B9%E6%A1%88%E4%B8%89%E7%BB%B4%E5%9B%BE.jpg" class="" title="整机方案三维图">
+
+<h3 id="（4）关键轴加工完成"><a href="#（4）关键轴加工完成" class="headerlink" title="（4）关键轴加工完成"></a><strong>（4）关键轴加工完成</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E5%85%B3%E9%94%AE%E8%BD%B4%E7%9A%84%E5%8A%A0%E5%B7%A5%E5%AE%8C%E6%88%90.jpg" class="" title="关键轴的加工完成">
+
+<h4 id="关键轴组件装配修配"><a href="#关键轴组件装配修配" class="headerlink" title="关键轴组件装配修配"></a><strong>关键轴组件装配修配</strong></h4><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E5%85%B3%E9%94%AE%E8%BD%B4%E7%BB%84%E4%BB%B6%E7%84%8A%E6%8E%A5%E6%A0%A1%E9%AA%8C%E8%BF%87%E7%A8%8B.jpg" class="" title="关键轴组件焊接校验过程">
+
+<img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E5%85%B3%E9%94%AE%E8%BD%B4%E7%BB%84%E4%BB%B6%E7%84%8A%E6%8E%A5%E4%BF%AE%E9%85%8D%E8%BF%87%E7%A8%8B.jpg" class="" title="关键轴组件焊接修配过程">
+
+<h3 id="（5）变速箱装配完成"><a href="#（5）变速箱装配完成" class="headerlink" title="（5）变速箱装配完成"></a><strong>（5）变速箱装配完成</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E5%8F%98%E9%80%9F%E7%AE%B1%E8%A3%85%E9%85%8D%E5%AE%8C%E6%88%90.jpg" class="" title="变速箱装配完成">
+
+<h3 id="（6）减速器装配完成"><a href="#（6）减速器装配完成" class="headerlink" title="（6）减速器装配完成"></a><strong>（6）减速器装配完成</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E9%BD%BF%E8%BD%AE%E5%87%8F%E9%80%9F%E5%99%A8%E8%A3%85%E9%85%8D%E5%AE%8C%E6%88%90.jpg" class="" title="齿轮减速器装配完成">
+
+<h3 id="（7）样机试验图"><a href="#（7）样机试验图" class="headerlink" title="（7）样机试验图"></a><strong>（7）样机试验图</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E6%A0%B7%E6%9C%BA%E8%AF%95%E9%AA%8C.jpg" class="" title="样机试验">
+
+<h3 id="（8）变速箱检修"><a href="#（8）变速箱检修" class="headerlink" title="（8）变速箱检修"></a><strong>（8）变速箱检修</strong></h3><img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E5%8F%98%E9%80%9F%E7%AE%B1%E6%A3%80%E4%BF%AE%E8%BF%87%E7%A8%8B.jpg" class="" title="变速箱检修过程">
+
+<img src="/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/%E5%8F%98%E9%80%9F%E7%AE%B1%E9%BD%BF%E8%BD%AE%E8%BD%B4%E8%BD%AE%E9%BD%BF%E7%BB%B7%E6%96%AD%E7%8E%B0%E8%B1%A1.jpg" class="" title="变速箱齿轮轴轮齿绷断现象">
+
+<h3 id="（9）项目还在进行中…"><a href="#（9）项目还在进行中…" class="headerlink" title="（9）项目还在进行中…"></a><strong>（9）项目还在进行中…</strong></h3>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>周燃</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/">http://example.com/2023/09/10/%E6%9E%9C%E5%9B%AD%E8%87%AA%E8%B5%B0%E5%BC%8F%E7%8E%AF%E5%BD%A2%E5%BC%80%E6%B2%9F%E6%9C%BA%E7%9A%84%E7%A0%94%E5%88%B6-%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/"># 项目经历</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/09/10/%E5%91%A8%E7%87%83%E7%A1%95%E5%A3%AB%E6%B1%82%E8%81%8C%E7%AE%80%E5%8E%86-%E6%9C%BA%E6%A2%B0%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%96%B9%E5%90%91/">周燃硕士求职简历-机械工程师方向</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 周燃 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
